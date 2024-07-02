@@ -9,8 +9,12 @@ body {
   background-color: #222 !important;
   display: grid;
   place-items: center;
-  height: 100vh;
+  /* height: 100vh; */
   overflow: scroll;
+}
+.profilePic {
+  text-align: center;
+  border: 2px solid burlywood;
 }
 
 h1 {
@@ -34,12 +38,11 @@ h1 {
 }
 
 .profileCard {
-  max-width: 730px;
-  margin: 35px auto;
-  padding: 20px;
+  max-width: 50%;
 
   background-color: #333;
   border-radius: 10px;
+  border: 4px solid yellowgreen;
 }
 
 .profileCard::after {

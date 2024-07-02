@@ -1,12 +1,41 @@
-/* Media query for tablets */
-@media (max-width: 768px) {
-    .mydatails {
-      flex-direction: column; 
-    }
-  
-    .profileCard {
-      margin: 20px; 
-      padding: 15px;
-      border: none; 
-    }
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+  .profileCard {
+    text-align: center;
+
+    /* margin: 1px; */
   }
+
+  .years2Writerup {
+    font-size: 10px;
+  }
+
+  .mydatails {
+    flex-direction: column;
+  }
+
+  .skill-list {
+    grid-template-columns: 1fr;
+  }
+
+  
+  .Containeryears2Writerup {
+    
+    display: inline;
+    border: none;
+    max-width: auto;
+    padding-top: 20px;
+  }
+
+  .Pmyskills h1 {
+    text-align: left;
+    text-wrap:nowrap;
+    font-size: 1rem;
+  }
+
+  .Pmyskills {
+    padding-top: 4rem;
+    margin-top: 4px;
+    display: none;
+  }
+}
