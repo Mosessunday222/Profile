@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mobile.css" />
+    <link rel="stylesheet" href="tablet.css" />
+    <title>Moses Sunday Slack Profile</title>
+  </head>
+  <body>
+    <div class="profileCard">
+      <img
+        src="moses.jpg"
+        alt="Slack Profile Picture"
+        data-testid="slackProfilePicture"
+      />
+
+      <div class="Containeryears2Writerup">
+        <p class="years2Writerup">
+          In the next two years of my tech career, before this year runs out, I
+          should be done with my React course online. After seeing that I'm good
+          in React, about 70% proficient, I will go for TypeScript, which I
+          strongly believe won't take me long, around 2 to 3 weeks to complete,
+          still within this year. Around November or October, I will learn
+          Framer Motion to be able to play with animation. While learning Framer
+          Motion, I will start applying for jobs. In 2025, I will go for a
+          testing course, which will not require coding, and another one that
+          may need JavaScript, which I am accustomed to. Before 2025 runs out, I
+          should be done with Next.js.
+        </p>
+        <div class="mydatails">
+          <p>
+            Slack Name:
+            <span data-testid="slackDisplayName">Moses Ime</span>
+          </p>
+          <p>
+            Slack Email:
+            <span data-testid="slackEmail">-mrmusco123@yahoo.com.com</span>
+          </p>
+          <p>
+            Time
+            <span id="currentTime" data-testid="currentTimeUTC"></span>
+          </p>
+          <p>
+            Day of the week:
+            <span id="currentDay" data-testid="currentDay"></span>
+          </p>
+        </div>
+        <div class="links">
+          <p>
+            <a href="https://hng.tech/learn" data-testid="hngLink"
+              >HNG Tech Learn</a
+            >
+          </p>
+          <p>
+            <a href="https://keyword.dog" data-testid="keywordLink"
+              >Keyword Dog</a
+            >
+          </p>
+          <p>
+            <a href="https://scrapeanyweb.site" data-testid="scrapeanywebLink"
+              >Scrape Any Web</a
+            >
+          </p>
+        </div>
+
+        <div class="Pmyskills">
+          <h1>MY SKILLS SO FAR</h1>
+          <div>
+            <ul id="skill-list" class="skill-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const skills = [
+        {
+          skill: "HTML+CSS",
+          level: "advanced",
+          color: "#2662EA",
+        },
+        {
+          skill: "JavaScript",
+          level: "intermediate",
+          color: "#EFD81D",
+        },
+        {
+          skill: "Web Design",
+          level: "depending",
+          color: "#C3DCAF",
+        },
+        {
+          skill: "Git and GitHub",
+          level: "intermediate",
+          color: "#E84F33",
+        },
+        {
+          skill: "React",
+          level: "intermediate",
+          color: "#60DAFB",
+        },
+        {
+          skill: "talwind",
+          level: "beginner",
+          color: "green",
+        },
+      ];
+
+      function updateTimeAndDay() {
+        const now = new Date();
+        const utcTime = now.toUTCString().split(" ")[4];
+        const dayOfWeek = now.toLocaleString("en-US", { weekday: "long" });
+
+        document.getElementById("currentTime").textContent = utcTime;
+        document.getElementById("currentDay").textContent = dayOfWeek;
+      }
+
+      function displaySkills() {
+        const skillsContainer = document.getElementById("skill-list");
+        skills.forEach((skill) => {
+          const skillElement = document.createElement("li");
+          skillElement.classList.add("skill");
+          skillElement.style.color = skill.color;
+          skillElement.textContent = `${skill.skill} (${skill.level})`;
+          skillsContainer.appendChild(skillElement);
+        });
+      }
+
+      updateTimeAndDay();
+      setInterval(updateTimeAndDay, 60000);
+      displaySkills();
+    </script>
+  </body>
+</html>

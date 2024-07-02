@@ -1,0 +1,20 @@
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .profileCard {
+      margin: 10px; 
+      padding: 10px; 
+      border: none;
+      width: auto;
+    }
+  
+    .years2Writerup {
+      font-size: 14px; 
+      color: red;
+    }
+  
+    .skill-list {
+      grid-template-columns: 1fr;
+    }
+  }
+  
